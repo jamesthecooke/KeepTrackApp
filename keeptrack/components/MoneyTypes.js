@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#444751",
     width: 300,
-    alignItems: "flex-start",
+    alignItems: "center",
     borderRadius: 10,
     margin: 10,
     shadowColor: "#000", // shadow color
