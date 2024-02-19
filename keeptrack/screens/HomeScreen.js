@@ -1,20 +1,37 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar } from "react-native";
+import { StyleSheet, Text, View, StatusBar, SafeAreaView } from "react-native";
+import TopMoneyContainer from "../components/TopMoneyContainer";
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Overall Money</Text>
+      </View>
+      <View style={styles.containerRow}>
+        <TopMoneyContainer />
+        <TopMoneyContainer />
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#2E3034",
     alignItems: "center",
-    justifyContent: "center",
+  },
+
+  titleContainer: {},
+
+  title: {
+    color: "white",
+    fontSize: 28,
+  },
+  containerRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10,
   },
 });
