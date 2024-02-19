@@ -1,12 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from "react-native";
 
 function TopMoneyContainer() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.moneyValue}>20000 |</Text>
-      <Text style={styles.subHeader}>Money In</Text>
-    </View>
+    <TouchableOpacity onPress={() => Alert.alert("this works")}>
+      <View style={styles.container}>
+        <Text style={styles.moneyValue}>20000 |</Text>
+        <Text style={styles.subHeader}>Money In</Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 
@@ -34,6 +36,7 @@ const styles = StyleSheet.create({
   moneyValue: {
     color: "#6BFE11",
     fontSize: 29,
+    marginLeft: "2%",
   },
 
   subHeader: {
@@ -41,5 +44,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: "left",
     paddingTop: "10%",
+    marginLeft: "2%",
   },
 });
