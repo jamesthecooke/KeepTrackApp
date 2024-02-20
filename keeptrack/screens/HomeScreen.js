@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from "react-native";
 import TopMoneyContainer from "../components/TopMoneyContainer";
 import MoneyTypes from "../components/MoneyTypes";
+import MoneyTypeHeaders from "../components/MoneyTypeHeaders";
 
 export default function HomeScreen() {
   return (
@@ -14,8 +15,11 @@ export default function HomeScreen() {
         <TopMoneyContainer />
       </View>
       <View>
+        <MoneyTypeHeaders />
         <MoneyTypes />
+        <MoneyTypeHeaders />
         <MoneyTypes />
+        <MoneyTypeHeaders />
         <MoneyTypes />
       </View>
     </SafeAreaView>
