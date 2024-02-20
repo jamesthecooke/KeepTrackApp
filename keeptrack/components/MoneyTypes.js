@@ -1,16 +1,20 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from "react-native";
 import InnerMoneyType from "./InnerMoneyType";
+import MoneyTypeHeaders from "./MoneyTypeHeaders";
 
 function MoneyTypes(props) {
   return (
-    <TouchableOpacity onPress={() => Alert.alert("this works")}>
-      <View style={styles.container}>
-        <InnerMoneyType />
-        <InnerMoneyType />
-        <InnerMoneyType />
-      </View>
-    </TouchableOpacity>
+    <>
+      <MoneyTypeHeaders />
+      <TouchableOpacity onPress={() => Alert.alert("this works")}>
+        <View style={styles.container}>
+          <InnerMoneyType />
+          <InnerMoneyType />
+          <InnerMoneyType />
+        </View>
+      </TouchableOpacity>
+    </>
   );
 }
 
