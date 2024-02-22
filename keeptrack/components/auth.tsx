@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Alert, StyleSheet, View, AppState, SafeAreaView } from "react-native";
+import {
+  Alert,
+  StyleSheet,
+  View,
+  AppState,
+  SafeAreaView,
+  Text,
+} from "react-native";
 import { supabase } from "../lib/superbase";
 import { Button, Input } from "react-native-elements";
 
@@ -50,6 +57,9 @@ export default function Auth() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.card}>
+        <View>
+          <Text style={styles.text}>. Keep Track .</Text>
+        </View>
         <View style={styles.inputs}>
           <Input
             label="Email"
@@ -82,6 +92,7 @@ export default function Auth() {
               backgroundColor: "#6B6C70",
               borderColor: "white",
               borderWidth: 1,
+              borderRadius: 20,
             }}
             title="Sign in"
             disabled={loading}
@@ -95,6 +106,7 @@ export default function Auth() {
               backgroundColor: "#6B6C70",
               borderColor: "white",
               borderWidth: 1,
+              borderRadius: 20,
             }}
             title="Sign up"
             disabled={loading}
@@ -129,8 +141,15 @@ const styles = StyleSheet.create({
 
   btns: {
     backgroundColor: "#6B6C70",
-    borderRadius: 10,
+    borderRadius: 20,
     marginBottom: 5,
     marginTop: 5,
+  },
+
+  text: {
+    color: "white",
+    fontSize: 30,
+    textAlign: "center",
+    paddingBottom: 20,
   },
 });
