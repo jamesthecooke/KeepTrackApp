@@ -50,19 +50,23 @@ export default function Auth() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.card}>
-        <View>
+        <View style={styles.inputs}>
           <Input
             label="Email"
+            labelStyle={{ color: "white" }}
+            inputStyle={{ color: "white" }}
             leftIcon={{ type: "font-awesome", name: "envelope" }}
             onChangeText={(text) => setEmail(text)}
             value={email}
-            placeholder="email@address.com"
+            placeholder="Email@address.com"
             autoCapitalize={"none"}
           />
         </View>
-        <View>
+        <View style={styles.inputs}>
           <Input
             label="Password"
+            labelStyle={{ color: "white" }}
+            inputStyle={{ color: "white" }}
             leftIcon={{ type: "font-awesome", name: "lock" }}
             onChangeText={(text) => setPassword(text)}
             value={password}
@@ -73,6 +77,12 @@ export default function Auth() {
         </View>
         <View>
           <Button
+            style={styles.btns}
+            buttonStyle={{
+              backgroundColor: "#6B6C70",
+              borderColor: "white",
+              borderWidth: 1,
+            }}
             title="Sign in"
             disabled={loading}
             onPress={() => signInWithEmail()}
@@ -80,6 +90,12 @@ export default function Auth() {
         </View>
         <View>
           <Button
+            style={styles.btns}
+            buttonStyle={{
+              backgroundColor: "#6B6C70",
+              borderColor: "white",
+              borderWidth: 1,
+            }}
             title="Sign up"
             disabled={loading}
             onPress={() => signUpWithEmail()}
@@ -99,9 +115,22 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    backgroundColor: "#2E3034",
+    backgroundColor: "#444751",
     borderRadius: 10,
     padding: 20,
     width: "80%",
+  },
+
+  inputs: {
+    backgroundColor: "#6B6C70",
+    borderRadius: 10,
+    marginBottom: 10,
+  },
+
+  btns: {
+    backgroundColor: "#6B6C70",
+    borderRadius: 10,
+    marginBottom: 5,
+    marginTop: 5,
   },
 });
