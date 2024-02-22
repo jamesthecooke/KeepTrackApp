@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
+import { supabase } from "../lib/superbase";
 import TopMoneyContainer from "../components/TopMoneyContainer";
 import MoneyTypes from "../components/MoneyTypes";
 
@@ -17,6 +18,10 @@ export default function HomeScreen() {
         <MoneyTypes />
         <MoneyTypes />
         <MoneyTypes />
+      </View>
+
+      <View style={styles.verticallySpaced}>
+        <Button title="Sign Out" onPress={() => supabase.auth.signOut()} />
       </View>
     </SafeAreaView>
   );
