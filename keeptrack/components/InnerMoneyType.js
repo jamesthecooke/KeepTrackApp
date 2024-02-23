@@ -1,7 +1,29 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/superbase";
 
 function InnerMoneyType() {
+  const [festchError, setFetchError] = useState(null);
+  const [moneyTypes, setMoneyTypes] = useState(null);
+
+  useEffect(() => {
+    const fetchValues = async () => {
+      const { data, error } = await supabase.from("Money in").select();
+
+      if (error) {
+        setFetchError("could not fetch");
+        // setValues(null);
+      }
+      if (data) {
+        setMoneyTypes(data);
+        setFetchError(null);
+      }
+    };
+
+    fetchValues();
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.catImg}>
@@ -11,7 +33,14 @@ function InnerMoneyType() {
         ></Image>
       </View>
       <View style={styles.catText}>
-        <Text style={styles.text}>blaaaaaaaaaaaa</Text>
+        {festchError && <Text>{festchError}</Text>}
+        {moneyTypes && (
+          <View style={styles.text}>
+            {moneyTypes.map((moneyTypes) => (
+              <Text key={moneyTypes.id}>{moneyTypes.Name}</Text>
+            ))}
+          </View>
+        )}
       </View>
       <View style={styles.catValue}>
         <Text style={styles.value}>£ 10.51</Text>
