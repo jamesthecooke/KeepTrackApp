@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../lib/superbase";
 
 function InnerMoneyType() {
-  const [festchError, setFetchError] = useState(null);
+  const [fetchError, setFetchError] = useState(null);
   const [moneyTypes, setMoneyTypes] = useState(null);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function InnerMoneyType() {
       </View>
 
       <View style={styles.catText}>
-        {festchError && <Text>{festchError}</Text>}
+        {fetchError && <Text>{fetchError}</Text>}
         {moneyTypes && (
           <View style={styles.text}>
             {moneyTypes.map((moneyTypes) => (
@@ -45,7 +45,7 @@ function InnerMoneyType() {
       </View>
 
       <View style={styles.catValue}>
-        {festchError && <Text>{festchError}</Text>}
+        {fetchError && <Text>{fetchError}</Text>}
         {moneyTypes && (
           <View style={styles.text}>
             {moneyTypes.map((moneyTypes) => (
