@@ -10,8 +10,6 @@ function MoneyTypes(props) {
       <TouchableOpacity onPress={() => Alert.alert("this works")}>
         <View style={styles.container}>
           <InnerMoneyType />
-          <InnerMoneyType />
-          <InnerMoneyType />
         </View>
       </TouchableOpacity>
     </>
