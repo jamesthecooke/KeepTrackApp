@@ -57,6 +57,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // Import your screens/components
 import HomeScreen from "./screens/HomeScreen";
 import Auth from "./components/auth";
+import MoneyIn from "./screens/MoneyIn";
 
 const Stack = createNativeStackNavigator();
 
@@ -84,6 +85,7 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="MoneyIn" component={MoneyIn} />
           </Stack.Navigator>
         </NavigationContainer>
       );

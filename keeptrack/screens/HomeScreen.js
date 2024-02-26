@@ -4,15 +4,15 @@ import { supabase } from "../lib/superbase";
 import TopMoneyContainer from "../components/TopMoneyContainer";
 import MoneyTypes from "../components/MoneyTypes";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Overall Money</Text>
       </View>
       <View style={styles.containerRow}>
-        <TopMoneyContainer />
-        <TopMoneyContainer />
+        <TopMoneyContainer navigation={navigation} />
+        <TopMoneyContainer navigation={navigation} />
       </View>
       <View>
         <MoneyTypes />

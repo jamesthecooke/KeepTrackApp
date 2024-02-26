@@ -1,27 +1,28 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Alert } from "react-native";
+import { SafeAreaView, Text, StyleSheet, View } from "react-native";
+import MoneyTypes from "./MoneyTypes";
 
-function TopMoneyContainer({ navigation }) {
+function MoneyInOutValue(props) {
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("MoneyIn")}>
+    <SafeAreaView>
       <View style={styles.container}>
         <Text style={styles.moneyValue}>20000 |</Text>
-        <Text style={styles.subHeader}>Money In</Text>
       </View>
-    </TouchableOpacity>
+      <MoneyTypes />
+    </SafeAreaView>
   );
 }
 
-export default TopMoneyContainer;
+export default MoneyInOutValue;
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#444751",
-    width: 150,
-    height: "10%",
-    alignItems: "flex-start",
+    width: 300,
+    height: 150,
     borderRadius: 10,
-    height: 96,
+    alignItems: "center",
+    justifyContent: "center",
     margin: 10,
     shadowColor: "#000", // shadow color
     shadowOffset: {
@@ -35,15 +36,6 @@ const styles = StyleSheet.create({
 
   moneyValue: {
     color: "#6BFE11",
-    fontSize: 29,
-    marginLeft: "2%",
-  },
-
-  subHeader: {
-    color: "#6BFE11",
-    fontSize: 18,
-    textAlign: "left",
-    paddingTop: "10%",
-    marginLeft: "2%",
+    fontSize: 45,
   },
 });
