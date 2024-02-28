@@ -9,7 +9,7 @@ function InnerMoneyType() {
 
   useEffect(() => {
     const fetchValues = async () => {
-      const { data, error } = await supabase.from("Money in").select();
+      const { data, error } = await supabase.from("Money").select();
 
       if (error) {
         setFetchError("could not fetch");
@@ -35,10 +35,10 @@ function InnerMoneyType() {
 
       <View style={styles.catText}>
         {festchError && <Text>{festchError}</Text>}
-        {moneyTypes && (
+        {Money && (
           <View style={styles.text}>
-            {moneyTypes.map((moneyTypes) => (
-              <Text key={moneyTypes.id}>{moneyTypes.Name}</Text>
+            {moneyTypes.map((Money) => (
+              <Text key={Money.id}>{Money.Name}</Text>
             ))}
           </View>
         )}
@@ -46,10 +46,10 @@ function InnerMoneyType() {
 
       <View style={styles.catValue}>
         {festchError && <Text>{festchError}</Text>}
-        {moneyTypes && (
+        {Money && (
           <View style={styles.text}>
-            {moneyTypes.map((moneyTypes) => (
-              <Text key={moneyTypes.id}>{moneyTypes.Value}</Text>
+            {Money.map((Money) => (
+              <Text key={Money.id}>{Money.Value}</Text>
             ))}
           </View>
         )}
