@@ -10,8 +10,6 @@ function MoneyTypes(props) {
         <MoneyTypeHeaders />
         <View style={styles.container}>
           <InnerMoneyType />
-          <InnerMoneyType />
-          <InnerMoneyType />
         </View>
       </TouchableOpacity>
     </>

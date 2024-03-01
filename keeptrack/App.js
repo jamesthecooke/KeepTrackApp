@@ -61,7 +61,7 @@ import Auth from "./components/auth";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [session, setSession] = useState<Session | null>(null);
+  const [session, setSession] = useState(null);
 
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
@@ -95,3 +95,5 @@ export default function App() {
 
   return <View style={{ flex: 1 }}>{renderApp()}</View>;
 }
+
+// trying to push
