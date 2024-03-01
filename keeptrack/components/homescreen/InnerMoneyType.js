@@ -7,7 +7,7 @@ function InnerMoneyType() {
       <View style={styles.catImg}>
         <Image
           style={styles.img}
-          source={require("../assets/icon.png")}
+          source={require("../../assets/icon.png")}
         ></Image>
       </View>
       <View style={styles.catText}>

@@ -6,8 +6,8 @@ import MoneyTypeHeaders from "./MoneyTypeHeaders";
 function MoneyTypes(props) {
   return (
     <>
-      <MoneyTypeHeaders />
       <TouchableOpacity onPress={() => Alert.alert("this works")}>
+        <MoneyTypeHeaders />
         <View style={styles.container}>
           <InnerMoneyType />
           <InnerMoneyType />
