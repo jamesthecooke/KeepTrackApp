@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 import { supabase } from "../lib/superbase";
 import TopMoneyContainer from "../components/TopMoneyContainer";
-import MoneyTypes from "../components/MoneyTypes";
+import MoneyTypes from "../components/homescreen/MoneyTypes";
 
 export default function HomeScreen() {
   return (
